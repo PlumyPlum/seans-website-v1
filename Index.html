@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Sean Plumridge — Game/Level Designer focused on photorealism, Unreal Engine, and cinematic experiences.">
+  <title>Game / Level Designer – Sean Plumridge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="menu.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <a class="brand" href="/">SEAN PLUMRIDGE</a>
+
+      <button class="nav-toggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <nav id="mainnav" class="mainnav" aria-label="Primary">
+        <ul>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+  
+    <!-- Mobile menu drawer (hidden by default) -->
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile" hidden>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Dim background when menu is open -->
+    <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="panel portfolio-slider">
+      <h2 class="section-title">Sean's Portfolio</h2>
+      <div class="slider" data-interval="4500">
+        <div class="slides">
+          <figure class="slide">
+            <img src="Images/SeanImage_Car.png" alt="Custom sports car racing at night" />
+            <figcaption class="caption">
+              <h3>Night Run</h3>
+              <p>Realtime headlights, cinematic DOF, and motion blur — built in Unreal Engine.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="slide">
+            <img src="Images/SeanImage_Woods.png" alt="Forest scene with bark and foliage" />
+            <figcaption class="caption">
+              <h3>Sanctum Grove</h3>
+              <p>Procedural foliage blending with cinematic depth of field — capturing warmth, decay, and the serenity of forgotten spaces.</p>
+            </figcaption>
+          </figure>
+        
+          <figure class="slide">
+            <img src="Images/SeanImage_BigGun.png" alt="Armored soldier aiming heavy weapon in cinematic lighting" />
+            <figcaption class="caption">
+              <h3>Echo Vanguard</h3>
+              <p>High-poly character rendered in real-time — emphasizing material contrast, emissive lighting, and camera-driven composition.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <button class="nav prev" aria-label="Previous"></button>
+        <button class="nav next" aria-label="Next"></button>
+        <div class="dots" aria-label="Slide indicators"></div>
+      </div>
+    </section>
+
+      <!-- About Section -->
+    <section id="about" class="section panel">
+      <h2 class="section-title">About</h2>
+
+      <p><strong>Driven. Creative. Relentlessly focused on excellence.</strong></p>
+
+      <p>
+        As a <strong>Game Designer</strong> and <strong>Director of Operations</strong>, 
+        I combine strategic leadership with hands-on creative direction to bring ideas to life. 
+        My approach is grounded in photorealism, precision, and player-focused design — 
+        where every detail serves immersion and emotional impact.
+      </p>
+
+      <p>
+        I’m passionate about empowering teams, mentoring emerging developers, 
+        and building collaborative environments where talent thrives. 
+        My leadership style is both structured and personal — 
+        I believe in clear vision, mutual respect, and motivating others through positivity, trust, and authenticity.
+      </p>
+
+      <p>
+        Whether I’m directing a complex production pipeline or refining level flow inside Unreal Engine, 
+        I bring energy, empathy, and an unshakable commitment to creating experiences that inspire players 
+        and elevate those who help build them.
+      </p>
+    </section>
+
+    <!-- Skills & Logos -->
+    <section id="skills" class="skills">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-grid">
+        <img src="Images/html5_logo-removebg-preview.png" alt="HTML5 logo" />
+        <img src="Images/SQL_logo-removebg-preview.png" alt="CSS3 logo" />
+        <img src="Images/JS_Logo-removebg-preview.png" alt="JavaScript logo" />
+        <img src="Images/UE_logo-removebg-preview.png" alt="Unreal Engine logo" />
+        <img src="Images/c++_logo-removebg-preview.png" alt="C++ logo" />
+        <img src="Images/Git_Logo-removebg-preview.png" alt="Git logo" />
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section panel">
+      <h2 class="section-title">Contact</h2>
+      <p>If you'd like to collaborate, discuss a project, or just connect — I’d love to hear from you.</p>
+
+      <div class="contact-actions">
+        <a href="mailto:spplumridge@gmail.com" class="btn">Email Me</a>
+        <a href="https://www.linkedin.com/in/seanplumridge" target="_blank" rel="noopener noreferrer" class="btn">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+  <!-- Footer Section -->
+  <footer id="footer" class="section">
+    © <span id="year"></span> Sean Plumridge
+  </footer>
+
+  <script>
+    (()=> {
+      'use strict';
+
+      /* ========== Helpers ========== */
+      const $  = (sel, root=document) => root.querySelector(sel);
+      const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+      /* ========== YEAR ========== */
+      const y = $('#year');
+      if (y) y.textContent = new Date().getFullYear();
+
+      /* ========== SLIDER ========== */
+      (function initSlider() {
+        const slider = $('.portfolio-slider .slider');
+        if (!slider) return;
+
+        const track    = $('.slides', slider);
+        const slides   = $$('.slides > *', slider);
+        const btnPrev  = $('.prev', slider);
+        const btnNext  = $('.next', slider);
+        const dotsWrap = $('.dots', slider);
+
+        if (!track || slides.length === 0 || !btnPrev || !btnNext || !dotsWrap) return;
+
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const intervalMs = Number(slider.dataset.interval || 4500);
+
+        // Build dots once
+        dotsWrap.innerHTML = '';
+        slides.forEach((_, idx) => {
+          const b = document.createElement('button');
+          if (idx === 0) b.setAttribute('aria-current', 'true');
+          b.addEventListener('click', () => go(idx, true));
+          dotsWrap.appendChild(b);
+        });
+        const dots = Array.from(dotsWrap.children);
+
+        let i = 0;
+        let timer = null;
+
+        const render = () => {
+          track.style.transform = `translateX(-${i * 100}%)`;
+          dots.forEach((d, idx) => d.toggleAttribute('aria-current', idx === i));
+        };
+
+        const go   = (nextIndex, pause) => { i = (nextIndex + slides.length) % slides.length; render(); if (pause) restart(); };
+        const next = () => go(i + 1);
+        const prev = () => go(i - 1);
+
+        const start   = () => { if (!prefersReduced && !timer) timer = setInterval(next, intervalMs); };
+        const stop    = () => { clearInterval(timer); timer = null; };
+        const restart = () => { stop(); start(); };
+
+        btnNext.addEventListener('click', next);
+        btnPrev.addEventListener('click', prev);
+
+        slider.addEventListener('mouseenter', stop);
+        slider.addEventListener('mouseleave', start);
+        slider.addEventListener('focusin', stop);
+        slider.addEventListener('focusout', start);
+
+        // Basic swipe
+        let sx = 0;
+        slider.addEventListener('touchstart', e => (sx = e.touches[0].clientX), { passive: true });
+        slider.addEventListener('touchend',   e => {
+          const dx = e.changedTouches[0].clientX - sx;
+          if (Math.abs(dx) > 40) (dx < 0 ? next() : prev());
+        }, { passive: true });
+
+        render();
+        start();
+      })();
+
+      /* ========== MOBILE MENU (hamburger + drawer) ========== */
+      (function initMobileMenu() {
+        const btn      = $('.nav-toggle');
+        const menu     = $('#mobileMenu');
+        const backdrop = $('#menuBackdrop');
+        if (!btn || !menu || !backdrop) return;
+
+        const openMenu = () => {
+          menu.hidden = false;
+          backdrop.hidden = false;
+          menu.classList.add('open');
+          requestAnimationFrame(() => backdrop.classList.add('show'));
+          document.body.classList.add('body-lock');
+          btn.setAttribute('aria-expanded', 'true');
+        };
+
+        const closeMenu = () => {
+          menu.classList.remove('open');
+          backdrop.classList.remove('show');
+          backdrop.addEventListener('transitionend', () => (backdrop.hidden = true), { once: true });
+          document.body.classList.remove('body-lock');
+          btn.setAttribute('aria-expanded', 'false');
+        };
+
+        const toggleMenu = () => (menu.classList.contains('open') ? closeMenu() : openMenu());
+
+        btn.addEventListener('click', toggleMenu);
+        backdrop.addEventListener('click', closeMenu);
+
+        // Close on ESC
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
+        });
+
+        // Close when clicking a link inside the drawer
+        menu.addEventListener('click', e => {
+          if (e.target.closest('a')) closeMenu();
+        });
+
+        // Safety: when resizing to desktop, ensure drawer is closed
+        let resizeTimer = null;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(() => {
+            if (window.innerWidth >= 900 && menu.classList.contains('open')) {
+              closeMenu();
+              menu.hidden = true;
+              backdrop.hidden = true;
+            }
+          }, 120);
+        });
+      })();
+    })();
+  </script>
+</body>
+</html>

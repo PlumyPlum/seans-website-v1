@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>One More Run – Unreal Engine 5 Physics Time Trial</title>
+  <meta name="description"
+        content="One More Run – A high-speed physics-driven time trial game built in Unreal Engine 5 using C++. Modular track systems, performance-first design, and precision movement mechanics.">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="omr.css" />
+</head>
+
+<body class="omr-body">
+
+<header class="omr-header">
+  <div class="container omr-header-inner">
+    <a href="/" class="omr-back">← Back to SeanPlumridge.com</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="omr-hero">
+    <div class="omr-hero-overlay"></div>
+    <picture>
+        <source srcset="Images/OneMoreRun_Hero.avif" type="image/avif">
+        <source srcset="Images/OneMoreRun_Hero2.webp" type="image/webp">
+        <img
+            src="Images/OneMoreRun_Hero2.jpg"
+            alt="One More Run energy sphere racing along elevated neon track"
+            class="omr-hero-img"
+            loading="eager"
+            decoding="async"
+            >
+    </picture>
+
+    <div class="container omr-hero-bottom">
+    <div class="omr-hero-info">
+      <p class="omr-kicker">Unreal Engine 5 · C++ · Physics-Driven</p>
+      <h2>Precision movement at extreme velocity.</h2>
+      <p class="omr-sub">
+        A real-time time trial experience built around modular architecture,
+        performance-first engineering, and gameplay clarity.
+      </p>
+    </div>
+  </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="omr-section">
+    <div class="container omr-grid-2">
+      <div>
+        <h2>High-speed. High-precision. No forgiveness.</h2>
+        <p>
+          One More Run is a physics-driven time trial game where players control
+          a high-energy sphere navigating modular tracks at extreme speeds.
+          Movement is fully physics-based — slope acceleration, impulse hops,
+          ground detection, and precision steering.
+        </p>
+        <p>
+          Built in Unreal Engine 5 using C++ and Blueprint integration,
+          the project explores real-time systems architecture,
+          performance optimization, and gameplay clarity.
+        </p>
+      </div>
+
+      <div class="omr-stats">
+        <div>
+          <span class="omr-stat-number">UE5</span>
+          <span class="omr-stat-label">Engine</span>
+        </div>
+        <div>
+          <span class="omr-stat-number">C++</span>
+          <span class="omr-stat-label">Core Systems</span>
+        </div>
+        <div>
+          <span class="omr-stat-number">120fps</span>
+          <span class="omr-stat-label">Target Performance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEMS -->
+  <section class="omr-section omr-section-dark">
+    <div class="container">
+      <h2 class="omr-center">Core Systems Architecture</h2>
+
+      <div class="omr-card-grid">
+
+        <div class="omr-card">
+          <h3>Movement System</h3>
+          <ul>
+            <li>Custom Pawn (AOMRPlayerPawn)</li>
+            <li>Physics sphere root component</li>
+            <li>Hop impulse & cooldown logic</li>
+            <li>Slope-based acceleration scaling</li>
+            <li>Ground detection & air control tuning</li>
+          </ul>
+        </div>
+
+        <div class="omr-card">
+          <h3>Game Architecture</h3>
+          <ul>
+            <li>Custom GameMode & GameState</li>
+            <li>Time trial lap tracking</li>
+            <li>Checkpoint system</li>
+            <li>UMG HUD countdown & best times</li>
+            <li>Modular track design pipeline</li>
+          </ul>
+        </div>
+
+        <div class="omr-card">
+          <h3>Performance Engineering</h3>
+          <ul>
+            <li>Collision complexity optimization</li>
+            <li>Physics sub-stepping tuning</li>
+            <li>Lighting balance for FPS stability</li>
+            <li>Camera FOV speed illusion tuning</li>
+            <li>Frame profiling & bottleneck analysis</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="omr-section">
+    <div class="container omr-philosophy">
+      <h2>Built Like a System. Not a Prototype.</h2>
+      <p>
+        One More Run is not a tutorial project. It is a systems exercise.
+        Every mechanic is modular. Every track piece is reusable.
+        Every performance decision is intentional.
+      </p>
+      <p>
+        The goal is clarity at speed — movement that feels fast,
+        fair, and predictable at high velocity.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="omr-section omr-cta">
+    <div class="container">
+      <h2>Currently in Active Development</h2>
+      <p>
+        Track design, movement refinement, audio layering,
+        and performance tuning are ongoing.
+      </p>
+      <a href="mailto:spplumridge@gmail.com" class="omr-btn">
+        Interested in collaborating →
+      </a>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>

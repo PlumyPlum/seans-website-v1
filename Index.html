@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Sean Plumridge – Product, Brand & Full-Stack Builder</title>
+  <title>Sean Plumridge – Product Architect & Full-Stack Engineer</title>
   <meta name="description"
         content="Sean Plumridge – founder of FinForFam.com, former Code Ninjas director, and full-stack designer/developer focused on clarity, performance, and high-trust product design.">
 
@@ -62,7 +62,10 @@
 
       <nav id="mainnav" class="mainnav" aria-label="Primary">
         <ul>
+          <li><a href="#home">Home</a></li>
           <li><a href="#work">Work</a></li>
+          <li><a href="/finforfam.html">FinForFam</a></li>
+          <li><a href="/one-more-run.html">One More Run</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -76,6 +79,8 @@
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="/finforfam.html">FinForFam</a></li>
+      <li><a href="/one-more-run.html">One More Run</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -88,16 +93,17 @@
     <section class="section hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="hero-kicker">Product • Brand • Full-Stack</p>
+          <p class="hero-kicker">Founder • Product Architect • Operator</p>
           <h1>
-            I build simple products for complex problems —
-            and the teams and brands around them.
+            I design and build decision engines —
+            the systems, brands, and teams around them.
           </h1>
+
           <p class="hero-lead">
-            Founder of <strong>FinForFam.com</strong>, former director of a
-            top-10 <strong>Code Ninjas</strong> franchise in North America,
-            and a visual designer/developer obsessed with clarity,
-            performance, and trust.
+            I operate at the intersection of product architecture,
+            systems thinking, and execution. From founding FinForFam
+            to leading a top-10 Code Ninjas franchise, I build products
+            and organizations that scale calmly.
           </p>
 
           <div class="hero-actions">
@@ -109,10 +115,10 @@
             </a>
           </div>
 
-          <div class="hero-tags">
-            <span>Deep thinker</span>
-            <span>Hands-on leader</span>
-            <span>Brand-driven engineer</span>
+          <div class="hero-cred">
+            <span>Founder, FinForFam</span>
+            <span>Top-10 Code Ninjas Franchise Director</span>
+            <span>Full-Stack & Unreal Engine Systems Builder</span>
           </div>
         </div>
 
@@ -135,6 +141,22 @@
             <p class="stat-meta">From UX and brand systems to full-stack builds and optimization.</p>
           </div>
         </aside>
+      </div>
+    </section>
+
+
+    <section class="section section-philosophy">
+      <div class="container">
+        <h2>Calm on the surface. Deep under the hood.</h2>
+        <p>
+          The best products don’t shout. They reduce cognitive load,
+          surface the right decision at the right moment, and are
+          architected for long-term clarity.
+        </p>
+        <p>
+          My work focuses on systems — not features. Decision engines,
+          operational frameworks, scalable product foundations.
+        </p>
       </div>
     </section>
 
@@ -189,7 +211,7 @@
             <article class="work-card">
               <div class="card-banner">
                 <img 
-                  src="Images/SeanImage_Car.avif" 
+                  src="Images/OneMoreRun_Hero.avif" 
                   alt="Cinematic Unreal Engine render"
                   width="600"
                   height="338"
@@ -198,7 +220,7 @@
                 >
               </div>
 
-              <h3>Game & Unreal Engine Work</h3>
+              <h3>One More Run — Unreal Engine C++ Time Trial Game</h3>
               <p>
                 Years of building photoreal environments, cinematic lighting, and
                 player-first experiences in Unreal Engine. This informs how I design
@@ -234,7 +256,7 @@
     <section id="experience" class="section section-experience">
       <div class="container">
         <header class="section-header">
-          <p class="section-kicker">Experience</p>
+          <p class="section-kicker">Operating Experience</p>
           <h2>Operator mindset, builder hands.</h2>
         </header>
 
@@ -294,8 +316,6 @@
         </div>
       </div>
     </section>
-
-
 
     <!-- ========== SKILLS ========== -->
     <section id="skills" class="section section-capabilities">
@@ -434,6 +454,21 @@
         });
       }
     })();
+  </script>
+
+  <script>
+      const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.section').forEach(section => {
+      section.classList.add('fade-in');
+      observer.observe(section);
+    });
   </script>
 </body>
 </html>

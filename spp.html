@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sports Performance Platform — Product Case Study</title>
+  <meta name="description" content="Sports Performance Platform is a connected performance system for coaches, athletes, teams, and organizations." />
+  <link rel="stylesheet" href="sppstyles.css" />
+</head>
+<body>
+  <header class="spp-header">
+    <div class="container">
+      <a class="back-link" href="/">← Back to SeanPlumridge.com</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="spp-hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Featured platform</p>
+          <h1>Sports Performance Platform</h1>
+          <p class="hero-statement">A connected performance system for coaches, athletes, teams, and organizations.</p>
+          <p class="hero-lead">SPP brings athlete development, training delivery, readiness, performance data, communication, and coaching workflows into one connected product system.</p>
+          <p class="role-line"><strong>Founder &amp; Product/Technology Lead</strong><span>Product strategy · UX · architecture · full-stack development</span></p>
+        </div>
+        <div class="hero-media" aria-label="Sports Performance Platform Player Portal visual">
+          <img src="Images/SPP_Portfolio.png" alt="Sports Performance Platform Player Portal visual featuring athlete development and a runner" width="1904" height="896" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section thesis-section">
+      <div class="container thesis-inner">
+        <p class="eyebrow">Product thesis</p>
+        <h2>Performance data is only useful when it changes the next decision.</h2>
+        <p>SPP turns fragmented athlete information into clear operational context for coaches and useful daily guidance for athletes—connecting the information that matters without burying people in dashboards.</p>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container split-grid">
+        <div class="section-copy">
+          <p class="eyebrow">One platform. Two experiences.</p>
+          <h2>Coordinated surfaces for the people doing the work.</h2>
+          <div class="surface-list">
+            <div><h3>Coach</h3><p>Operational control across programming, teams, readiness, athlete development, performance intelligence, and communication.</p></div>
+            <div><h3>Player</h3><p>A smartphone-first workspace for training execution, readiness, progress, objectives, testing, and coach communication.</p></div>
+          </div>
+        </div>
+        <figure class="product-frame command-frame">
+          <img src="Images/SPP_Command_Centre.png" alt="Sports Performance Platform coach Command Center showing roster, availability, readiness, attention signals, and training" width="1818" height="865" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section coach-evidence">
+      <div class="container split-grid split-grid-reverse">
+        <figure class="product-frame coach-frame">
+          <img src="Images/Coach_Portal_Calendar.png" alt="Coach Portal calendar showing training, testing, rest days, and team planning" loading="lazy" />
+        </figure>
+        <div class="section-copy">
+          <p class="eyebrow">Coach operations</p>
+          <h2>Operational control without losing athlete context.</h2>
+          <p>Coaches can move from organization state to teams, athletes, training, readiness, attention signals, and scheduling without treating each athlete as an isolated profile.</p>
+          <p>Planning and review stay grounded in the current operational timeline and the people it affects.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft coach-evidence">
+      <div class="container split-grid">
+        <div class="section-copy">
+          <p class="eyebrow">Athlete &amp; roster intelligence</p>
+          <h2>Every athlete in context.</h2>
+          <p>Roster views make current training state, assignment coverage, completion history, availability, workload, and athlete-level actions visible alongside team and organization context.</p>
+          <p>That gives coaches a practical way to recognize where attention is needed without losing sight of the wider program.</p>
+        </div>
+        <figure class="product-frame coach-frame">
+          <img src="Images/Coach_Portal_Roster.png" alt="Coach Portal roster with athlete training state, assignment coverage, and coach actions" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container intelligence-layout">
+        <div class="section-copy">
+          <p class="eyebrow">Performance intelligence</p>
+          <h2>From performance data to decisions.</h2>
+          <p>Configurable reporting brings readiness patterns, program progression, testing, benchmarking, and longitudinal review into a useful coaching context.</p>
+          <p>SPP is designed to surface evidence that supports review and action—not merely store data.</p>
+        </div>
+        <figure class="product-frame reports-frame">
+          <img src="Images/Coach_Portal_Reports.png" alt="Coach Portal reports for readiness, program progression, testing, and athlete benchmarking" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section athlete-section">
+      <div class="container athlete-grid">
+        <div class="section-copy">
+          <p class="eyebrow">Athlete experience</p>
+          <h2>Built around how athletes actually use software.</h2>
+          <p>The Player experience puts today’s training, development focus, program progression, readiness, testing, and coach communication into a focused smartphone-first workspace.</p>
+          <p>Training and communication sit together, so athletes can act on direction without moving between disconnected tools.</p>
+        </div>
+        <div class="mobile-screens" aria-label="Sports Performance Platform athlete mobile screens">
+          <figure class="mobile-frame"><img src="Images/Player_Portal_Mobile_Training.png" alt="Player Portal mobile training screen showing current program, progress, testing, and readiness" loading="lazy" /></figure>
+          <figure class="mobile-frame"><img src="Images/Player_Portal_Mobile_Message.png" alt="Player Portal mobile messaging screen for coach and athlete communication" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <header class="section-intro">
+          <p class="eyebrow">Product architecture</p>
+          <h2>Architecture &amp; engineering.</h2>
+          <p>SPP is a multi-surface software system across Coach Web, Player mobile/web, and a shared backend and data model.</p>
+        </header>
+        <div class="architecture-grid">
+          <article><h3>Coach</h3><p>React · Vite · responsive web application</p></article>
+          <article><h3>Player</h3><p>Expo / React Native · smartphone-first · iOS / Android · responsive web where appropriate</p></article>
+          <article><h3>Backend</h3><p>NestJS · REST APIs · Prisma · MySQL</p></article>
+          <article><h3>Engineering practice</h3><p>Modular architecture, relational data modelling, role-based access, Git/GitHub, automated testing, debugging, performance, and accessibility.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section leadership-section">
+      <div class="container leadership-inner">
+        <div>
+          <p class="eyebrow">Product leadership</p>
+          <h2>Built from product thesis to implementation.</h2>
+        </div>
+        <div>
+          <p class="role-title">Founder &amp; Product/Technology Lead</p>
+          <p>My work spans product strategy, roadmap, information architecture, UX/UI direction, system architecture, full-stack implementation, testing, product iteration, platform positioning, and partnership groundwork.</p>
+          <div class="leadership-capabilities" aria-label="Product leadership capabilities">
+            <span><strong>Product</strong>Thesis, roadmap, positioning</span>
+            <span><strong>Experience</strong>Information architecture, UX/UI</span>
+            <span><strong>Engineering</strong>Systems, implementation, quality</span>
+            <span><strong>Scale</strong>Iteration, partnerships, go-to-market groundwork</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="container">
+        <p>SPP is designed around a simple principle: performance systems should reduce uncertainty, connect people to the right context, and make the next decision clearer.</p>
+        <a class="closing-link" href="/">← Back to portfolio</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

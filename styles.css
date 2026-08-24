@@ -16,8 +16,8 @@
 
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  --space-section-y: clamp(3.5rem, 5vw, 4.5rem);
-  --space-container-x: 1.rem;
+  --space-section-y: clamp(3rem, 4vw, 4rem);
+  --space-container-x: clamp(1.25rem, 3vw, 2rem);
 }
 
 /* ========== GLOBAL RESET ========== */
@@ -49,6 +49,12 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(33, 118, 174, 0.45);
+  outline-offset: 3px;
 }
 
 ul {
@@ -84,7 +90,7 @@ h3 {
 }
 /* sections that sit back-to-back get a slightly tighter top */
 .section + .section {
-  padding-top: clamp(2rem, 4.5vw, 4rem);
+  padding-top: clamp(2.25rem, 3.5vw, 3.25rem);
 }
 
 .section-alt {
@@ -98,8 +104,7 @@ h3 {
     rgba(33, 118, 174, 0.06),
     rgba(255, 255, 255, 0.95) 60%
   );
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-block: clamp(2.75rem, 4vw, 3.5rem);
 }
 
 .section-header {
@@ -109,7 +114,7 @@ h3 {
 
 .section-experience .section-header,
 #contact .section-header {
-  margin-bottom: 1.8rem; 
+  margin-bottom: 1.35rem;
 }
 
 .section-header h2 {
@@ -167,7 +172,7 @@ h3 {
 .mainnav ul {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: clamp(1rem, 1.7vw, 1.5rem);
 }
 
 .mainnav a {
@@ -259,13 +264,13 @@ h3 {
 
 /* ========== HERO ========== */
 .hero {
-  padding-top: 5rem;
-  padding-bottom: 4.5rem;
+  padding-top: clamp(3.25rem, 5vw, 4.25rem);
+  padding-bottom: clamp(2rem, 3vw, 2.75rem);
 }
 
 .hero-grid {
   display: grid;
-  gap: 3rem;
+  gap: clamp(2rem, 4vw, 3.25rem);
   align-items: flex-start;
 }
 
@@ -289,15 +294,15 @@ h3 {
   max-width: 34rem;
   font-size: 1.05rem;
   line-height: 1.6;
-  margin: 0 0 0.25rem;
+  margin: 0;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.25rem;
-  margin-bottom: 1.4rem;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+  margin-bottom: 1.1rem;
 }
 
 .hero-tags {
@@ -316,10 +321,11 @@ h3 {
 }
 
 .hero-cred {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.45rem 1rem;
+  margin-top: 1.15rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid rgba(214, 217, 229, 0.85);
   font-size: 0.85rem;
   color: var(--color-muted);
 }
@@ -350,14 +356,15 @@ h3 {
 .stat-card {
   background: var(--color-surface);
   border-radius: var(--radius-lg);
-  padding: 1.1rem 1.2rem 1.1rem;
+  min-height: 112px;
+  padding: 1rem 1.15rem;
   box-shadow: 0 14px 30px rgba(10, 18, 40, 0.09);
   border: 1px solid rgba(214, 217, 229, 0.9);
 }
 
 .stat-card h3 {
   margin: 0 0 0.3rem;
-  font-size: 0.95rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--color-muted);
@@ -365,7 +372,7 @@ h3 {
 
 .stat-primary {
   margin: 0 0 0.4rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-primary);
 }
@@ -384,19 +391,26 @@ h3 {
   align-items: stretch;
 }
 
+.work-featured-grid {
+  display: grid;
+  gap: 1.35rem;
+  align-items: stretch;
+}
+
 .work-card {
   background: var(--color-surface);
   border-radius: var(--radius-lg);
   padding: 1.7rem 1.7rem 1.6rem;
   border: 1px solid rgba(214, 217, 229, 0.96);
   box-shadow: 0 10px 26px rgba(11, 15, 40, 0.08);
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
 }
 
 .work-card-main {
   padding: 1.1rem 1.4rem 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 0.7rem;
   border-radius: 18px;
   box-shadow: 0 25px 60px rgba(10, 18, 40, 0.16);
   border: 1px solid rgba(214, 217, 229, 0.85);
@@ -412,6 +426,8 @@ h3 {
   margin: -1.4rem -1.4rem 1.1rem;
   border-radius: 18px 18px 0 0;
   overflow: hidden;
+  aspect-ratio: 1.9 / 1;
+  background: #edf4f5;
   border-bottom: 1px solid rgba(214, 217, 229, 0.9);
   box-shadow: 0 18px 38px rgba(10, 18, 40, 0.16);
 }
@@ -419,7 +435,8 @@ h3 {
 .work-screenshot img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
   transform: translateZ(0);
 }
 
@@ -434,13 +451,17 @@ h3 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.11em;
-  margin-bottom: 0.5rem;
+  align-self: flex-start;
+  margin-bottom: 0.1rem;
+  border: 1px solid rgba(33, 118, 174, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .work-card-main h3 {
   margin-top: 0;
   margin-bottom: 0.35rem;
-  font-size: 1.35rem;
+  font-size: 1.22rem;
+  line-height: 1.25;
 }
 
 .work-card-main p {
@@ -451,7 +472,7 @@ h3 {
 }
 
 .work-points {
-  margin: 0.1rem 0 0.8rem;
+  margin: 0.1rem 0 0.55rem;
   padding-left: 1.2rem;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -467,7 +488,7 @@ h3 {
   gap: 0.8rem;
   font-size: 0.85rem;
   color: var(--color-muted);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 /* Right column cards */
@@ -509,7 +530,7 @@ h3 {
 
 /* Work CTA pill */
 .work-card-main .pill-link {
-  margin-top: 0.2rem;
+  margin-top: auto;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   background: linear-gradient(135deg, rgba(33,118,174,0.06), rgba(33,118,174,0.14));
@@ -520,39 +541,88 @@ h3 {
   background: rgba(33,118,174,0.16);
 }
 
+#spp .work-screenshot {
+  background: #030812;
+}
+
+.earlier-work {
+  grid-column: 1 / -1;
+  margin-top: 0.25rem;
+}
+
+.earlier-work > header {
+  max-width: 640px;
+  margin-bottom: 0.65rem;
+}
+
+.earlier-work h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.3;
+}
+
+.earlier-work-card {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 1rem;
+}
+
+.earlier-work-card h4 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+}
+
+.earlier-work-card p {
+  margin: 0 0 0.55rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.earlier-work-card .card-banner {
+  margin: 0;
+}
+
+.earlier-work-card .pill-link {
+  color: var(--color-primary);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
 /* ========== EXPERIENCE ========== */
 
 #work.section {
-  padding-bottom: clamp(3rem, 4vw, 3.8rem);
+  padding-top: clamp(2rem, 3vw, 2.75rem);
+  padding-bottom: clamp(2.5rem, 3.5vw, 3.25rem);
 }
 
 .section-experience {
-  margin-top: 4rem;
-   padding-top: clamp(3rem, 4vw, 3.8rem);
+  margin-top: 0;
+  padding-top: clamp(2.75rem, 3.5vw, 3.25rem);
 }
 
 .experience-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr);
-  gap: 2.5rem;
-  align-items: flex-start;
+  gap: 1.25rem;
+  align-items: stretch;
 }
 
 .experience-left {
-  display: flex;
-  flex-direction: column;
-  gap: 2.1rem;
+  display: contents;
 }
 
 .experience-card {
   border-radius: 18px;
   background: #ffffff;
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
-  padding: 1.6rem 1.7rem 1.7rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem 1.4rem 1.45rem;
 }
 
 .experience-card-highlight {
-  padding: 1.5rem 1.6rem 1.8rem;
+  padding: 1.35rem 1.4rem 1.45rem;
 }
 
 /* Top-10 pill badge */
@@ -564,14 +634,14 @@ h3 {
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-muted);
   background: rgba(15, 118, 178, 0.06);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.65rem;
 }
 
 /* Banner image at the top of the Code Ninjas card */
 .experience-banner {
-  margin: -1.5rem -1.6rem 1rem;
+  margin: 0 -1.4rem 1rem;
   border-radius: 18px 18px 0 0;
   overflow: hidden;
 }
@@ -579,7 +649,7 @@ h3 {
 .experience-banner img {
   display: block;
   width: 100%;
-  height: 160px;        
+  height: 105px;
   object-fit: cover;
   filter: saturate(0.85) brightness(1.03);
 }
@@ -593,7 +663,7 @@ h3 {
 .section-experience .card-subtitle {
   margin-bottom: 0.6rem;
   font-size: 0.9rem;
-  color: var(--color-text-muted);
+  color: var(--color-muted);
 }
 
 .section-experience .card-list {
@@ -604,12 +674,11 @@ h3 {
 }
 
 .section-experience .card-list li + li {
-  margin-top: 0.2rem;
+  margin-top: 0.3rem;
 }
 
 .section-philosophy {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-block: clamp(2rem, 3vw, 2.5rem);
 }
 
 .section-philosophy h2 {
@@ -618,22 +687,28 @@ h3 {
 }
 
 .section-philosophy p {
+  margin: 0;
   font-size: 1.1rem;
   color: var(--color-muted);
-  line-height: 1.7;
+  line-height: 1.6;
+}
+
+.philosophy-copy {
+  display: grid;
+  gap: 0.55rem;
 }
 
 /* ========== CAPABILITIES / SKILLS ========== */
 
 .skills-grid {
   display: grid;
-  gap: 1.6rem;
+  gap: 1.15rem;
 }
 
 .skills-column {
   background: rgba(255, 255, 255, 0.9);
   border-radius: var(--radius-lg);
-  padding: 1.5rem 1.6rem;
+  padding: 1.3rem 1.35rem;
   border: 1px solid rgba(214, 217, 229, 0.85);
   font-size: 0.95rem;
 }
@@ -655,7 +730,7 @@ h3 {
 .skills-column li {
   position: relative;
   padding-left: 1rem;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .skills-column li::before {
@@ -674,7 +749,7 @@ h3 {
 
 .contact-inner {
   display: grid;
-  gap: 1.8rem;
+  gap: 1.25rem;
   align-items: center;
 }
 
@@ -688,6 +763,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  justify-content: flex-end;
 }
 
 /* ========== BUTTONS & LINKS ========== */
@@ -697,7 +773,8 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.65rem 1.45rem;
+  min-height: 44px;
+  padding: 0.65rem 1.25rem;
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
   font-size: 0.95rem;
@@ -784,10 +861,10 @@ h3 {
     grid-template-columns: 1fr;
     gap: 1.8rem;
   }
+}
 
-  .experience-right {
-    order: -1; /* show Code Ninjas first on mobile */
-  }
+#contact.section {
+  padding-block: clamp(2.5rem, 3.5vw, 3.25rem);
 }
 
 @media (min-width: 720px) {
@@ -795,8 +872,31 @@ h3 {
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   }
 
+  .hero-cred {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .section-philosophy .container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+
+  .section-philosophy h2 {
+    margin: 0;
+  }
+
   .work-grid {
     grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+  }
+
+  .work-featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .earlier-work-card {
+    grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1.45fr);
   }
 
   .skills-grid {
@@ -805,6 +905,20 @@ h3 {
 
   .contact-inner {
     grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .experience-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .experience-card .card-title {
+    min-height: 3.9rem;
+  }
+
+  .experience-card .card-subtitle {
+    min-height: 2.5rem;
   }
 }
 

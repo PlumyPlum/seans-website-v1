@@ -1,6 +1,6 @@
-# Sean Plumridge – Game / Level Designer Portfolio
+# Sean Plumridge – Product & Technology Portfolio
 
-This is my personal portfolio website, built with **HTML**, **CSS**, and **JavaScript** — showcasing my work as a **Game Designer** and **Operations Manager**.
+This is my personal portfolio website, built with **HTML**, **CSS**, and **JavaScript** — showcasing product leadership, full-stack development, and operations work across FinForFam, Sports Performance Platform, and Code Ninjas.
 
 ## 🖥️ Live Site
 Visit the live version here:  

@@ -297,6 +297,21 @@ h3 {
   margin: 0;
 }
 
+.hero-tech {
+  margin: 1rem 0 0;
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.6;
+}
+
+.hero-context {
+  margin: 0.3rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -587,6 +602,12 @@ h3 {
   color: var(--color-primary);
   font-size: 0.84rem;
   line-height: 1.45;
+}
+
+.work-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
 }
 
 /* ========== EXPERIENCE ========== */
